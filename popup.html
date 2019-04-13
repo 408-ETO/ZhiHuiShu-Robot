@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    button {
+      border-radius: 5px;
+      border: none;
+      color: azure;
+      width: 120px;
+      height: 30px;
+    }
+    li{
+      margin-left:-15px
+    }
+    #submit{
+      background-color:darkcyan
+    }
+  </style>
+</head>
+
+<body>
+  <h3>插件处于<span id='text'></span>状态</h3>
+  <button id='bn'></button>
+  <h3 id='toggle'>自定义设置</h3>
+  <ul id='setting'>
+    <li>
+      <input name='check-box' type="checkbox">速度x1.5
+    </li>
+    <li>
+      <input name='check-box' type="checkbox">自动下一节
+    </li>
+    <li>
+      <input name='check-box' type="checkbox">关闭弹题
+    </li>
+    <li>
+      <input name='check-box' type="checkbox">设置为流畅
+    </li>
+    <li>
+      <input name='check-box' type="checkbox">设置静音
+    </li>
+  </ul>
+  <button id='submit'>确认设置</button>
+  <script src="popup.js"></script>
+</body>
+
+</html>
