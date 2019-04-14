@@ -4,7 +4,7 @@
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 ### 介绍
-"anti-ZHS"是一个Chrome插件用以自动地刷"ZHS"网课……**更多细节见英文版**
+"anti-ZHS"是一个Chrome插件用以自动地刷"ZHS"网课……*更多细节见[英文版](./README.md)*
 
 ### 使用方法
 * 在开发者模式下，在[Chrome拓展程序页面](chrome://extensions/)，通过"加载已解压的拓展程序"进行安装即可
