@@ -1,13 +1,13 @@
 //注入页面用于控制DOM
 
 chrome.storage.sync.get('isRun', data => {
-    if (!data.isRun || window.location.host != 'study.zhihuishu.com') 
+    if (!data.isRun || window.location.host != 'study.zhihuishu.com')
         return
     document.addEventListener('DOMContentLoaded', () => {
         console.log('js injected in')
 
         chrome.storage.sync.get('setting', res => {
-            console.log(res.setting)
+            //console.log(res.setting)
             let [speed, next, quiz, fluent, volume] = res.setting
 
             function volumeShut() {
@@ -27,7 +27,7 @@ chrome.storage.sync.get('isRun', data => {
             function setBQ() {
                 if (!fluent)
                     return
-                document.getElementsByClassName('definiLines')[0].children[1].click()
+                document.getElementsByClassName('definiLines')[0].children[2].click()
                 console.log('set video in fluent quality')
             }
 
@@ -50,7 +50,7 @@ chrome.storage.sync.get('isRun', data => {
 
             function thread() {
                 setInterval(() => {
-                    if (document.getElementsByClassName('passTime')[0].style.width == '100%') {
+                    if (next && document.getElementsByClassName('passTime')[0].style.width == '100%') {
                         setTimeout(() => {
                             nextClass()
                             setTimeout(init, 2500)
@@ -61,12 +61,17 @@ chrome.storage.sync.get('isRun', data => {
             }
 
             function init() {
-                volumeShut()
+                volumeShut() 
                 speedUP()
                 setBQ()
             }
 
+            function addPageAction(){
+                document.getElementsByClassName('next_lesson')[0].addEventListener('click',() => setTimeout(init, 1000))
+            }
+
             function main() {
+                addPageAction()
                 init()
                 thread()
             }
